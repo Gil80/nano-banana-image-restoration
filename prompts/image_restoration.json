@@ -1,0 +1,19 @@
+{
+  "prompt": "Perform technical image restoration on this uploaded photograph. This is a scanned vintage film photograph from my personal family album. Apply the following image processing operations:\n\n1. ANALYZE IMAGE FILE PROPERTIES: Evaluate resolution, sharpness, noise level, color balance, film grain density, dust and scratch marks, compression artifacts, and dynamic range.\n\n2. UPSCALE TO 4K: Increase the pixel resolution to 4K (3840px on the long edge, maintaining original aspect ratio). Reconstruct fine detail from existing pixel data only — recover texture in fabric weave, hair strands, and all surfaces already present in the source file.\n\n3. SHARPEN: Apply unsharp mask and detail recovery to restore edge crispness across all areas of the image. Enhance micro-contrast to bring out existing texture. Remove softness caused by the original optics or film scanning process.\n\n4. COLOR CORRECTION: Neutralize the color cast from aged film dyes. Restore accurate white balance. Recover true colors of all elements — clothing, background, all objects. Improve dynamic range — open up shadows and recover highlight detail. The corrected palette should reflect how the scene appeared to the naked eye at the moment of capture.\n\n5. ARTIFACT REMOVAL: Remove film grain, dust specks, scratches, and scanning artifacts while preserving genuine image detail underneath.\n\nCONSTRAINTS:\n- Do NOT alter, modify, or regenerate any content in the image. Preserve every element exactly as-is.\n- Do NOT add any detail that does not already exist in the source pixels. No hallucinated or invented elements.\n- Do NOT change framing, crop, or composition.\n- Only apply: upscaling, sharpening, color correction, and artifact removal.\n\nOutput this single restored image. Nothing else.",
+  "negative_prompt": "altering content, adding non-existing details, inventing elements, changing composition, cropping differently, adding text, adding watermark, cartoon, illustration, painting, CGI, 3D render, over-saturation, HDR glow, artificial lens flare, hallucinated details, invented textures",
+  "image_input": [],
+  "api_parameters": {
+    "google_search": false,
+    "resolution": "4K",
+    "output_format": "png",
+    "aspect_ratio": "auto"
+  },
+  "settings": {
+    "resolution": "4K",
+    "style": "professional photo restoration, archival quality",
+    "lighting": "preserve original lighting, correct color cast only",
+    "camera_angle": "preserve original exactly",
+    "depth_of_field": "preserve original exactly",
+    "quality": "4K ultra-sharp, clean, color-accurate, artifact-free"
+  }
+}
