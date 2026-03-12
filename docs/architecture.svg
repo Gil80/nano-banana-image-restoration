@@ -1,0 +1,344 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160"
+     font-family="'Segoe UI', system-ui, Arial, sans-serif">
+
+  <defs>
+    <marker id="a-blue"   markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L0,12 L12,6 z" fill="#4f6ef7"/></marker>
+    <marker id="a-amber"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L0,12 L12,6 z" fill="#f59e0b"/></marker>
+    <marker id="a-green"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L0,12 L12,6 z" fill="#22c55e"/></marker>
+    <marker id="a-cyan"   markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L0,12 L12,6 z" fill="#06b6d4"/></marker>
+    <marker id="a-white"  markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L0,12 L12,6 z" fill="#94a3b8"/></marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <linearGradient id="img-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <!-- Crosshatch pattern for damaged areas -->
+    <pattern id="damage" patternUnits="userSpaceOnUse" width="8" height="8">
+      <path d="M0,8 L8,0" stroke="#475569" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="3840" height="2160" fill="#0d1117"/>
+
+  <!-- TITLE -->
+  <text x="1920" y="80" text-anchor="middle" font-size="52" font-weight="700" fill="#f1f5f9">
+    nano-banana-image-restoration — Architecture
+  </text>
+  <text x="1920" y="130" text-anchor="middle" font-size="28" fill="#64748b">
+    AI Image Restoration Toolkit · Source Photo → Backend Selection → 5-Step Restoration Pipeline → Output
+  </text>
+
+  <!-- ════════════════════════════════════════════
+       PHASE 1: INPUT (left column)
+       ════════════════════════════════════════════ -->
+
+  <!-- Phase 1 header -->
+  <rect x="60" y="180" width="1060" height="60" rx="12" fill="#1e293b"/>
+  <text x="590" y="220" text-anchor="middle" font-size="26" font-weight="700" fill="#4f6ef7" letter-spacing="3">PHASE 1 — INPUT</text>
+
+  <!-- Source Photo -->
+  <rect x="80" y="280" width="480" height="340" rx="14" fill="#0f172a" stroke="#4f6ef7" stroke-width="3" filter="url(#shadow)"/>
+  <text x="320" y="320" text-anchor="middle" font-size="28" font-weight="700" fill="#4f6ef7">Source Photo</text>
+  <line x1="100" y1="340" x2="540" y2="340" stroke="#1e3a8a" stroke-width="1"/>
+
+  <!-- Photo placeholder with damage indicators -->
+  <rect x="120" y="360" width="380" height="220" rx="8" fill="url(#img-grad)" stroke="#334155" stroke-width="2"/>
+  <rect x="120" y="360" width="380" height="220" rx="8" fill="url(#damage)" opacity="0.3"/>
+  <text x="310" y="440" text-anchor="middle" font-size="18" fill="#475569">SCANNED VINTAGE PHOTO</text>
+  <text x="310" y="468" text-anchor="middle" font-size="16" fill="#64748b">grain · dust · scratches · color cast</text>
+  <text x="310" y="496" text-anchor="middle" font-size="16" fill="#64748b">faded · low resolution · soft focus</text>
+  <text x="320" y="548" text-anchor="middle" font-size="20" fill="#94a3b8">images/old_family_photo.jpg</text>
+  <text x="320" y="576" text-anchor="middle" font-size="18" fill="#64748b">Upload to images/ folder</text>
+
+  <!-- Resolution Choice -->
+  <rect x="80" y="660" width="480" height="200" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="3" filter="url(#shadow)"/>
+  <text x="320" y="700" text-anchor="middle" font-size="28" font-weight="700" fill="#f59e0b">Resolution Choice</text>
+  <line x1="100" y1="720" x2="540" y2="720" stroke="#78350f" stroke-width="1"/>
+  <text x="320" y="754" text-anchor="middle" font-size="22" fill="#94a3b8">Must specify before proceeding</text>
+  <text x="320" y="788" text-anchor="middle" font-size="20" fill="#fcd34d">1K (1024px) · 2K (2048px) · 4K (3840px)</text>
+  <text x="320" y="820" text-anchor="middle" font-size="18" fill="#64748b">Resolution affects API billing costs</text>
+  <text x="320" y="846" text-anchor="middle" font-size="18" fill="#f87171">Tool will pause and ask if not specified</text>
+
+  <!-- AI Assistant (Claude Code) -->
+  <rect x="620" y="280" width="480" height="580" rx="14" fill="#0f172a" stroke="#22c55e" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="620" y="264" width="180" height="32" rx="8" fill="#22c55e"/>
+  <text x="710" y="286" text-anchor="middle" font-size="16" font-weight="700" fill="#052e16">AI ASSISTANT</text>
+  <text x="860" y="320" text-anchor="middle" font-size="26" font-weight="700" fill="#22c55e">Claude Code</text>
+  <text x="860" y="352" text-anchor="middle" font-size="20" fill="#86efac">image-restoration skill</text>
+  <line x1="640" y1="370" x2="1080" y2="370" stroke="#14532d" stroke-width="1"/>
+
+  <text x="860" y="404" text-anchor="middle" font-size="20" fill="#94a3b8">1. Identify source image</text>
+  <text x="860" y="438" text-anchor="middle" font-size="20" fill="#94a3b8">2. Ask for resolution (1K/2K/4K)</text>
+  <text x="860" y="472" text-anchor="middle" font-size="20" fill="#94a3b8">3. Ask for output path</text>
+  <text x="860" y="506" text-anchor="middle" font-size="20" fill="#94a3b8">4. Update image_input in JSON</text>
+  <text x="860" y="540" text-anchor="middle" font-size="20" fill="#94a3b8">5. Execute generation script</text>
+
+  <line x1="640" y1="564" x2="1080" y2="564" stroke="#14532d" stroke-width="1"/>
+
+  <!-- Two prompt formats -->
+  <text x="860" y="598" text-anchor="middle" font-size="22" font-weight="600" fill="#22c55e">Prompt Formats</text>
+
+  <rect x="650" y="620" width="200" height="72" rx="10" fill="#052e16" stroke="#4f6ef7" stroke-width="2"/>
+  <text x="750" y="650" text-anchor="middle" font-size="18" font-weight="600" fill="#4f6ef7">JSON Prompt</text>
+  <text x="750" y="674" text-anchor="middle" font-size="15" fill="#94a3b8">image_restoration.json</text>
+
+  <rect x="870" y="620" width="210" height="72" rx="10" fill="#052e16" stroke="#06b6d4" stroke-width="2"/>
+  <text x="975" y="650" text-anchor="middle" font-size="18" font-weight="600" fill="#06b6d4">Plain Text</text>
+  <text x="975" y="674" text-anchor="middle" font-size="15" fill="#94a3b8">*_plain_text.txt</text>
+
+  <text x="750" y="726" text-anchor="middle" font-size="16" fill="#64748b">→ API backends</text>
+  <text x="975" y="726" text-anchor="middle" font-size="16" fill="#64748b">→ Gemini web UI</text>
+
+  <!-- Hard Constraints badge -->
+  <rect x="640" y="750" width="460" height="90" rx="10" fill="#2d0a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="870" y="780" text-anchor="middle" font-size="20" font-weight="700" fill="#f87171">Hard Constraints</text>
+  <text x="870" y="808" text-anchor="middle" font-size="16" fill="#fca5a5">No content alteration · No hallucination · No crop</text>
+  <text x="870" y="830" text-anchor="middle" font-size="16" fill="#fca5a5">Only: upscale, sharpen, color-correct, remove artifacts</text>
+
+  <!-- Arrows: Source → AI Assistant -->
+  <line x1="560" y1="450" x2="608" y2="450" stroke="#4f6ef7" stroke-width="3" marker-end="url(#a-blue)"/>
+  <line x1="560" y1="760" x2="608" y2="600" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#a-amber)"/>
+
+  <!-- ════════════════════════════════════════════
+       PHASE 2: BACKENDS (center column)
+       ════════════════════════════════════════════ -->
+
+  <!-- Phase 2 header -->
+  <rect x="1180" y="180" width="1060" height="60" rx="12" fill="#1e293b"/>
+  <text x="1710" y="220" text-anchor="middle" font-size="26" font-weight="700" fill="#22c55e" letter-spacing="3">PHASE 2 — BACKEND SELECTION</text>
+
+  <!-- generate_kie.py -->
+  <rect x="1200" y="280" width="520" height="130" rx="14" fill="#052e16" stroke="#22c55e" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="1200" y="264" width="160" height="32" rx="8" fill="#22c55e"/>
+  <text x="1280" y="286" text-anchor="middle" font-size="16" font-weight="700" fill="#052e16">RECOMMENDED</text>
+  <text x="1460" y="320" text-anchor="middle" font-size="26" font-weight="700" fill="#22c55e">generate_kie.py</text>
+  <line x1="1220" y1="340" x2="1700" y2="340" stroke="#14532d" stroke-width="1"/>
+  <text x="1460" y="370" text-anchor="middle" font-size="20" fill="#94a3b8">Kie.ai nano-banana-2 · KIE_API_KEY</text>
+  <text x="1460" y="398" text-anchor="middle" font-size="18" fill="#64748b">Upload source → task → poll → download</text>
+
+  <!-- generate_gemini.py -->
+  <rect x="1200" y="440" width="520" height="130" rx="14" fill="#083344" stroke="#06b6d4" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1460" y="480" text-anchor="middle" font-size="26" font-weight="700" fill="#06b6d4">generate_gemini.py</text>
+  <line x1="1220" y1="500" x2="1700" y2="500" stroke="#164e63" stroke-width="1"/>
+  <text x="1460" y="530" text-anchor="middle" font-size="20" fill="#94a3b8">Google Gemini API · GEMINI_API_KEY</text>
+  <text x="1460" y="558" text-anchor="middle" font-size="18" fill="#64748b">Direct call · image-to-image transform</text>
+
+  <!-- export_prompt.py -->
+  <rect x="1200" y="600" width="520" height="110" rx="14" fill="#083344" stroke="#06b6d4" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1460" y="638" text-anchor="middle" font-size="24" font-weight="700" fill="#06b6d4">export_prompt.py</text>
+  <line x1="1220" y1="656" x2="1700" y2="656" stroke="#164e63" stroke-width="1"/>
+  <text x="1460" y="684" text-anchor="middle" font-size="20" fill="#94a3b8">JSON → plain text · for Gemini web UI</text>
+
+  <!-- Arrows: Phase 1 → Phase 2 -->
+  <line x1="1100" y1="520" x2="1188" y2="345" stroke="#22c55e" stroke-width="3" marker-end="url(#a-green)"/>
+  <line x1="1100" y1="520" x2="1188" y2="505" stroke="#06b6d4" stroke-width="3" marker-end="url(#a-cyan)"/>
+  <line x1="1100" y1="560" x2="1188" y2="655" stroke="#06b6d4" stroke-width="2" marker-end="url(#a-cyan)"/>
+
+  <!-- ════════════════════════════════════════════
+       PHASE 3: 5-STEP RESTORATION PIPELINE (center-right)
+       ════════════════════════════════════════════ -->
+
+  <!-- Phase 3 header -->
+  <rect x="1180" y="780" width="1060" height="60" rx="12" fill="#1e293b"/>
+  <text x="1710" y="820" text-anchor="middle" font-size="26" font-weight="700" fill="#f59e0b" letter-spacing="3">RESTORATION PIPELINE</text>
+
+  <!-- Step 1: Analyze -->
+  <rect x="1200" y="870" width="500" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1200" y="870" width="60" height="100" rx="12" fill="#f59e0b"/>
+  <text x="1230" y="930" text-anchor="middle" font-size="30" font-weight="700" fill="#0d1117">1</text>
+  <text x="1470" y="908" text-anchor="middle" font-size="22" font-weight="700" fill="#f59e0b">Analyze</text>
+  <text x="1470" y="940" text-anchor="middle" font-size="18" fill="#94a3b8">Evaluate resolution, sharpness, noise, color balance,</text>
+  <text x="1470" y="962" text-anchor="middle" font-size="18" fill="#94a3b8">film grain density, dust/scratches, dynamic range</text>
+
+  <!-- Step 2: Upscale -->
+  <rect x="1200" y="990" width="500" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1200" y="990" width="60" height="100" rx="12" fill="#f59e0b"/>
+  <text x="1230" y="1050" text-anchor="middle" font-size="30" font-weight="700" fill="#0d1117">2</text>
+  <text x="1470" y="1028" text-anchor="middle" font-size="22" font-weight="700" fill="#f59e0b">Upscale</text>
+  <text x="1470" y="1058" text-anchor="middle" font-size="18" fill="#94a3b8">Increase to target resolution (1K/2K/4K),</text>
+  <text x="1470" y="1080" text-anchor="middle" font-size="18" fill="#94a3b8">maintain aspect ratio, reconstruct from existing pixels only</text>
+
+  <!-- Step 3: Sharpen -->
+  <rect x="1200" y="1110" width="500" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1200" y="1110" width="60" height="100" rx="12" fill="#f59e0b"/>
+  <text x="1230" y="1170" text-anchor="middle" font-size="30" font-weight="700" fill="#0d1117">3</text>
+  <text x="1470" y="1148" text-anchor="middle" font-size="22" font-weight="700" fill="#f59e0b">Sharpen</text>
+  <text x="1470" y="1178" text-anchor="middle" font-size="18" fill="#94a3b8">Unsharp mask + detail recovery, restore edge crispness,</text>
+  <text x="1470" y="1200" text-anchor="middle" font-size="18" fill="#94a3b8">enhance micro-contrast, fix original optics/scanning softness</text>
+
+  <!-- Step 4: Color Correct -->
+  <rect x="1200" y="1230" width="500" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1200" y="1230" width="60" height="100" rx="12" fill="#f59e0b"/>
+  <text x="1230" y="1290" text-anchor="middle" font-size="30" font-weight="700" fill="#0d1117">4</text>
+  <text x="1470" y="1268" text-anchor="middle" font-size="22" font-weight="700" fill="#f59e0b">Color Correct</text>
+  <text x="1470" y="1298" text-anchor="middle" font-size="18" fill="#94a3b8">Neutralize aged film dye color casts, restore white balance,</text>
+  <text x="1470" y="1320" text-anchor="middle" font-size="18" fill="#94a3b8">recover true colors, open shadows, recover highlights</text>
+
+  <!-- Step 5: Remove Artifacts -->
+  <rect x="1200" y="1350" width="500" height="100" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1200" y="1350" width="60" height="100" rx="12" fill="#f59e0b"/>
+  <text x="1230" y="1410" text-anchor="middle" font-size="30" font-weight="700" fill="#0d1117">5</text>
+  <text x="1470" y="1388" text-anchor="middle" font-size="22" font-weight="700" fill="#f59e0b">Remove Artifacts</text>
+  <text x="1470" y="1418" text-anchor="middle" font-size="18" fill="#94a3b8">Film grain, dust specks, scratches, scanning artifacts</text>
+  <text x="1470" y="1440" text-anchor="middle" font-size="18" fill="#94a3b8">while preserving genuine detail</text>
+
+  <!-- Connecting arrows between pipeline steps -->
+  <line x1="1450" y1="970" x2="1450" y2="980" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-amber)"/>
+  <line x1="1450" y1="1090" x2="1450" y2="1100" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-amber)"/>
+  <line x1="1450" y1="1210" x2="1450" y2="1220" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-amber)"/>
+  <line x1="1450" y1="1330" x2="1450" y2="1340" stroke="#f59e0b" stroke-width="2" marker-end="url(#a-amber)"/>
+
+  <!-- ════════════════════════════════════════════
+       OUTPUT COLUMN (right)
+       ════════════════════════════════════════════ -->
+
+  <!-- Output header -->
+  <rect x="2540" y="180" width="1240" height="60" rx="12" fill="#1e293b"/>
+  <text x="3160" y="220" text-anchor="middle" font-size="26" font-weight="700" fill="#22c55e" letter-spacing="3">OUTPUT</text>
+
+  <!-- Restored Image -->
+  <rect x="2560" y="280" width="560" height="760" rx="14" fill="#0f172a" stroke="#22c55e" stroke-width="3" filter="url(#shadow)"/>
+  <text x="2840" y="320" text-anchor="middle" font-size="28" font-weight="700" fill="#22c55e">Restored Image</text>
+  <line x1="2580" y1="340" x2="3100" y2="340" stroke="#14532d" stroke-width="1"/>
+
+  <!-- Before / After comparison -->
+  <rect x="2590" y="360" width="190" height="180" rx="8" fill="url(#img-grad)" stroke="#334155" stroke-width="2"/>
+  <rect x="2590" y="360" width="190" height="180" rx="8" fill="url(#damage)" opacity="0.25"/>
+  <text x="2685" y="446" text-anchor="middle" font-size="16" fill="#475569">BEFORE</text>
+  <text x="2685" y="468" text-anchor="middle" font-size="14" fill="#64748b">faded, grainy</text>
+
+  <text x="2800" y="456" text-anchor="middle" font-size="28" fill="#22c55e">→</text>
+
+  <rect x="2820" y="360" width="250" height="180" rx="8" fill="url(#img-grad)" stroke="#22c55e" stroke-width="2"/>
+  <text x="2945" y="440" text-anchor="middle" font-size="16" fill="#22c55e">AFTER</text>
+  <text x="2945" y="462" text-anchor="middle" font-size="14" fill="#86efac">sharp, color-corrected</text>
+  <text x="2945" y="484" text-anchor="middle" font-size="14" fill="#86efac">artifact-free, 4K</text>
+
+  <line x1="2580" y1="560" x2="3100" y2="560" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="2840" y="594" text-anchor="middle" font-size="22" font-weight="600" fill="#22c55e">Kie.ai / Gemini output</text>
+  <text x="2840" y="626" text-anchor="middle" font-size="20" fill="#94a3b8">Up to 3840 × 2560 px · PNG</text>
+  <text x="2840" y="656" text-anchor="middle" font-size="18" fill="#64748b">Content 100% preserved</text>
+
+  <line x1="2580" y1="680" x2="3100" y2="680" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="2840" y="712" text-anchor="middle" font-size="22" font-weight="600" fill="#f59e0b">Quality Guarantees</text>
+  <text x="2840" y="744" text-anchor="middle" font-size="18" fill="#94a3b8">No hallucinated details added</text>
+  <text x="2840" y="770" text-anchor="middle" font-size="18" fill="#94a3b8">No composition changes</text>
+  <text x="2840" y="796" text-anchor="middle" font-size="18" fill="#94a3b8">No content alteration</text>
+  <text x="2840" y="822" text-anchor="middle" font-size="18" fill="#94a3b8">Original aspect ratio maintained</text>
+
+  <line x1="2580" y1="846" x2="3100" y2="846" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="2840" y="880" text-anchor="middle" font-size="20" fill="#94a3b8">Saved to images/restored_output.png</text>
+  <text x="2840" y="912" text-anchor="middle" font-size="20" fill="#94a3b8">Version naming for refinement:</text>
+  <text x="2840" y="944" text-anchor="middle" font-size="22" font-weight="600" fill="#f59e0b">v1 → v1b → v1c → v2</text>
+  <text x="2840" y="976" text-anchor="middle" font-size="18" fill="#64748b">iterate prompt, rerun, compare</text>
+
+  <!-- Gemini Web UI output -->
+  <rect x="3160" y="280" width="600" height="300" rx="14" fill="#0f172a" stroke="#06b6d4" stroke-width="3" filter="url(#shadow)"/>
+  <text x="3460" y="320" text-anchor="middle" font-size="28" font-weight="700" fill="#06b6d4">Gemini Web UI</text>
+  <line x1="3180" y1="340" x2="3740" y2="340" stroke="#164e63" stroke-width="1"/>
+  <text x="3460" y="376" text-anchor="middle" font-size="20" fill="#94a3b8">Manual copy/paste workflow</text>
+  <text x="3460" y="410" text-anchor="middle" font-size="20" fill="#94a3b8">1. Upload scanned photo</text>
+  <text x="3460" y="440" text-anchor="middle" font-size="20" fill="#94a3b8">2. Paste plain text prompt</text>
+  <text x="3460" y="470" text-anchor="middle" font-size="20" fill="#94a3b8">3. Download restored image</text>
+  <text x="3460" y="506" text-anchor="middle" font-size="22" font-weight="600" fill="#06b6d4">Free · No API key needed</text>
+  <text x="3460" y="540" text-anchor="middle" font-size="18" fill="#64748b">gemini.google.com</text>
+
+  <!-- Arrows: Backends → Output -->
+  <line x1="1720" y1="345" x2="2548" y2="500" stroke="#22c55e" stroke-width="3" marker-end="url(#a-green)"/>
+  <line x1="1720" y1="505" x2="2548" y2="560" stroke="#06b6d4" stroke-width="3" marker-end="url(#a-cyan)"/>
+  <line x1="1720" y1="655" x2="3148" y2="450" stroke="#06b6d4" stroke-width="2" marker-end="url(#a-cyan)"/>
+
+  <!-- ════════════════════════════════════════════
+       ENVIRONMENT VARIABLES & CONFIGURATION
+       ════════════════════════════════════════════ -->
+  <rect x="60" y="1540" width="3720" height="280" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="100" y="1580" font-size="22" font-weight="700" fill="#475569" letter-spacing="3">ENVIRONMENT VARIABLES &amp; CONFIGURATION</text>
+
+  <rect x="100" y="1600" width="400" height="100" rx="10" fill="#052e16" stroke="#22c55e" stroke-width="2"/>
+  <text x="300" y="1636" text-anchor="middle" font-size="22" font-weight="700" fill="#22c55e">KIE_API_KEY</text>
+  <text x="300" y="1664" text-anchor="middle" font-size="18" fill="#86efac">Required for Kie.ai</text>
+  <text x="300" y="1688" text-anchor="middle" font-size="16" fill="#64748b">kie.ai → account → API keys</text>
+
+  <rect x="540" y="1600" width="400" height="100" rx="10" fill="#083344" stroke="#06b6d4" stroke-width="2"/>
+  <text x="740" y="1636" text-anchor="middle" font-size="22" font-weight="700" fill="#06b6d4">GEMINI_API_KEY</text>
+  <text x="740" y="1664" text-anchor="middle" font-size="18" fill="#67e8f9">Required for Gemini API</text>
+  <text x="740" y="1688" text-anchor="middle" font-size="16" fill="#64748b">aistudio.google.com → API keys</text>
+
+  <rect x="980" y="1600" width="400" height="100" rx="10" fill="#083344" stroke="#06b6d4" stroke-width="2"/>
+  <text x="1180" y="1636" text-anchor="middle" font-size="22" font-weight="700" fill="#06b6d4">No key needed</text>
+  <text x="1180" y="1664" text-anchor="middle" font-size="18" fill="#67e8f9">Gemini web UI · export_prompt.py</text>
+  <text x="1180" y="1688" text-anchor="middle" font-size="16" fill="#64748b">Free manual copy/paste workflow</text>
+
+  <text x="1500" y="1640" font-size="20" fill="#94a3b8">Store keys in</text>
+  <text x="1636" y="1640" font-size="20" fill="#f59e0b" font-weight="600">.env</text>
+  <text x="1678" y="1640" font-size="20" fill="#94a3b8">at project root — never commit</text>
+
+  <text x="1500" y="1672" font-size="20" fill="#94a3b8">Prompts in</text>
+  <text x="1603" y="1672" font-size="20" fill="#4f6ef7" font-weight="600">prompts/image_restoration.json</text>
+
+  <text x="1500" y="1704" font-size="20" fill="#94a3b8">Output in</text>
+  <text x="1592" y="1704" font-size="20" fill="#22c55e" font-weight="600">images/restored_output.png</text>
+
+  <text x="1500" y="1736" font-size="20" fill="#94a3b8">Run:</text>
+  <text x="1546" y="1736" font-size="20" fill="#e2e8f0" font-weight="600">python scripts/generate_kie.py prompts/image_restoration.json images/restored_output.png</text>
+
+  <text x="1500" y="1768" font-size="20" fill="#94a3b8">Source image must be added to</text>
+  <text x="1792" y="1768" font-size="20" fill="#f59e0b" font-weight="600">image_input</text>
+  <text x="1898" y="1768" font-size="20" fill="#94a3b8">array in JSON before running</text>
+
+  <!-- ════════════════════════════════════════════
+       PIPELINE FLOW LEGEND (bottom)
+       ════════════════════════════════════════════ -->
+  <rect x="60" y="1860" width="3720" height="260" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <text x="100" y="1900" font-size="22" font-weight="700" fill="#475569" letter-spacing="3">WORKFLOW SUMMARY</text>
+
+  <!-- Flow diagram: linear steps -->
+  <rect x="100" y="1930" width="300" height="80" rx="12" fill="#0f172a" stroke="#4f6ef7" stroke-width="2"/>
+  <text x="250" y="1966" text-anchor="middle" font-size="20" font-weight="600" fill="#4f6ef7">Source Photo</text>
+  <text x="250" y="1992" text-anchor="middle" font-size="16" fill="#94a3b8">images/*.jpg</text>
+
+  <line x1="400" y1="1970" x2="470" y2="1970" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-white)"/>
+
+  <rect x="480" y="1930" width="300" height="80" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+  <text x="630" y="1966" text-anchor="middle" font-size="20" font-weight="600" fill="#f59e0b">Resolution</text>
+  <text x="630" y="1992" text-anchor="middle" font-size="16" fill="#94a3b8">1K / 2K / 4K</text>
+
+  <line x1="780" y1="1970" x2="850" y2="1970" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-white)"/>
+
+  <rect x="860" y="1930" width="300" height="80" rx="12" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+  <text x="1010" y="1966" text-anchor="middle" font-size="20" font-weight="600" fill="#22c55e">Backend</text>
+  <text x="1010" y="1992" text-anchor="middle" font-size="16" fill="#94a3b8">API or Gemini web UI</text>
+
+  <line x1="1160" y1="1970" x2="1230" y2="1970" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-white)"/>
+
+  <rect x="1240" y="1930" width="600" height="80" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1540" y="1966" text-anchor="middle" font-size="20" font-weight="600" fill="#f59e0b">5-Step Pipeline</text>
+  <text x="1540" y="1992" text-anchor="middle" font-size="16" fill="#94a3b8">Analyze → Upscale → Sharpen → Color → Artifacts</text>
+
+  <line x1="1840" y1="1970" x2="1910" y2="1970" stroke="#94a3b8" stroke-width="2" marker-end="url(#a-white)"/>
+
+  <rect x="1920" y="1930" width="340" height="80" rx="12" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+  <text x="2090" y="1966" text-anchor="middle" font-size="20" font-weight="600" fill="#22c55e">Restored Image</text>
+  <text x="2090" y="1992" text-anchor="middle" font-size="16" fill="#94a3b8">images/restored_output.png</text>
+
+  <!-- Legend items -->
+  <text x="2400" y="1960" font-size="18" fill="#22c55e">━━━</text>
+  <text x="2450" y="1960" font-size="18" fill="#64748b">Kie.ai / Gemini API path</text>
+  <text x="2400" y="1990" font-size="18" fill="#06b6d4">━━━</text>
+  <text x="2450" y="1990" font-size="18" fill="#64748b">Gemini web UI path</text>
+  <text x="2400" y="2020" font-size="18" fill="#f59e0b">━━━</text>
+  <text x="2450" y="2020" font-size="18" fill="#64748b">Restoration pipeline</text>
+
+  <!-- Related project link -->
+  <text x="100" y="2080" font-size="20" fill="#64748b">For AI image</text>
+  <text x="213" y="2080" font-size="20" fill="#22c55e" font-weight="600">generation</text>
+  <text x="310" y="2080" font-size="20" fill="#64748b">(creating new images from text), see</text>
+  <text x="617" y="2080" font-size="20" fill="#4f6ef7" font-weight="600">nano-banana-images</text>
+
+</svg>

@@ -12,6 +12,10 @@ An AI image restoration toolkit that restores and enhances scanned vintage film 
 
 ![Restoration Gemini UI Demo](demo/demo_restore_gemini_ui.gif)
 
+## Architecture
+
+![Architecture](docs/architecture.svg)
+
 ## How It Works
 
 You tell the tool which photo to restore, choose your output path, and it handles the rest.
@@ -101,6 +105,8 @@ nano-banana-image-restoration/
 ├── demo/
 │   ├── demo_restore_api.gif               # Demo: restoration via API
 │   └── demo_restore_gemini_ui.gif         # Demo: restoration via Gemini web UI
+├── docs/
+│   └── architecture.svg                   # Architecture diagram
 ├── .env                                   # API keys (not committed)
 └── requirements.txt
 ```
